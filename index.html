@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAM-B</title>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: rgb(254, 109, 6);
+            --second-color: black;
+        }
+
+        #index-page {
+            position: relative;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        #index-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: 100% 100%;
+            background-image: url("images/holy spirit in the sky.jpg");
+            filter: brightness(100%);
+            z-index: -1000;
+        }
+
+        .index-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .index-img img {
+            max-width: 100%;
+            width: 40rem;
+            height: auto;
+        }
+
+        p {
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+
+        .spinner {
+            border: 6px solid var(--primary-color);
+            border-top: 6px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 768px) {
+            .index-img img {
+                width: 20rem;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .spinner {
+                margin-top: 60px;
+                border: 4px solid var(--primary-color);
+                border-top: 4px solid white;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="index-page">
+        <div class="index-page">
+            <div class="index-img">
+                <img src="images/logo-no-background.png" alt="Logo" />
+            </div>
+            <div class="landing">
+                <div class="spinner"></div>
+                <p>Please wait...</p>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

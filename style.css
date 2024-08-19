@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --primary-color: rgb(254, 109, 6);
+    --second-color: black;
+    --third-color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("images/holy spirit in the sky.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    filter: brightness(100%);
+    z-index: -100;
+}
+
+
+/* header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 90px;
+}
+
+.links-container {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+nav a {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav svg {
+    fill: var(--primary-color);
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    display: none;
+}
+
+
+/* home section */
+#Home {
+    color: var(--primary-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.home-h1 h2{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+/* About section */
+#About {
+    height: auto;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: flex-end;
+    direction: rtl;
+}
+
+.about-content {
+    margin: 7rem 40px 10rem 40px;
+    text-align: right;
+}
+
+.about-content h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.about-content h2 {
+    color: var(--second-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.about-1{
+    margin-bottom: 50px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    nav {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .open-sidebar-button {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        cursor: pointer;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--third-color);
+        box-shadow: -5px 0 -5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 20px;
+        justify-content: flex-start;
+    }
+
+    .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        left: 0;        
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    /* home section */
+    #Home {
+        color: var(--primary-color);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .home-h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .home-h1 h2{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
