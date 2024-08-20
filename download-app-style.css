@@ -176,6 +176,13 @@ nav svg {
     gap: 20px;
 }
 
+.coming-soon-message {
+    display: none;
+    margin-top: 40px;
+    padding: 10px;
+    text-align: center;
+}
+
 
 
 /* image section */
